@@ -49,7 +49,7 @@ class Qualification extends StatelessWidget {
                 top: 15,
                 left: 20,
                 right: 20,
-                bottom: 12,
+                bottom: 13,
               ),
               color: const Color(0xFFEFEFEF),
               child: const Text(
