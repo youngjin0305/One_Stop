@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onestop/screens/idcard.dart';
 
 class Qualification extends StatelessWidget {
   const Qualification({super.key});
@@ -42,24 +43,39 @@ class Qualification extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            Container(
-              width: 320,
-              height: 50,
-              padding: const EdgeInsets.only(
-                top: 15,
-                left: 20,
-                right: 20,
-                bottom: 12,
-              ),
-              color: const Color(0xFFEFEFEF),
-              child: const Text(
-                '신분증 촬영',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 16,
-                  fontFamily: 'Inter',
-                  fontWeight: FontWeight.w700,
-                  height: 0,
+            GestureDetector(
+              onTap: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => const IdCard()));
+              },
+              child: Container(
+                width: 370,
+                height: 50,
+                padding: const EdgeInsets.only(
+                  top: 15,
+                  left: 20,
+                  right: 20,
+                  bottom: 13,
+                ),
+                color: const Color(0xFFEFEFEF),
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '신분증 촬영',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w700,
+                        height: 0,
+                      ),
+                    ),
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      size: 18,
+                    )
+                  ],
                 ),
               ),
             ),

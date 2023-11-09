@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:onestop/screens/qualification.dart';
+import 'package:onestop/screens/terms_of_use.dart';
 
 void main() {
   runApp(const MyApp());
@@ -55,8 +56,8 @@ class FirstPage extends StatelessWidget {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const Qualification()));
+              Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const TermsOfUse()));
             },
             child: Container(
               width: 260,
