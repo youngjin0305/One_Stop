@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:onestop/screens/qualification.dart';
 import 'package:onestop/screens/terms_of_use.dart';
 
 void main() {

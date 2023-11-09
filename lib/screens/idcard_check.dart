@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onestop/screens/password.dart';
 
 class IdcardCheck extends StatefulWidget {
   const IdcardCheck({super.key});
@@ -9,8 +10,8 @@ class IdcardCheck extends StatefulWidget {
 
 class _IdcardCheckState extends State<IdcardCheck> {
   var name = 'tmp';
-  var num = '';
-  var date = '';
+  var num = '1';
+  var date = '2';
 
   @override
   Widget build(BuildContext context) {
@@ -70,8 +71,18 @@ class _IdcardCheckState extends State<IdcardCheck> {
                 borderRadius: BorderRadius.circular(5),
               ),
             ),
-            child: Text(
-              name,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                name,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                  height: 0,
+                ),
+              ),
             ),
           ),
           const SizedBox(
@@ -109,8 +120,18 @@ class _IdcardCheckState extends State<IdcardCheck> {
                 borderRadius: BorderRadius.circular(5),
               ),
             ),
-            child: Text(
-              name,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                num,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                  height: 0,
+                ),
+              ),
             ),
           ),
           const SizedBox(
@@ -148,8 +169,18 @@ class _IdcardCheckState extends State<IdcardCheck> {
                 borderRadius: BorderRadius.circular(5),
               ),
             ),
-            child: Text(
-              name,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                date,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                  height: 0,
+                ),
+              ),
             ),
           ),
           const SizedBox(
@@ -159,7 +190,7 @@ class _IdcardCheckState extends State<IdcardCheck> {
             onTap: () {
               //임시로 이동만
               Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const IdcardCheck()));
+                  MaterialPageRoute(builder: (context) => const Password()));
             },
             child: Container(
               width: 260,
@@ -176,7 +207,7 @@ class _IdcardCheckState extends State<IdcardCheck> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    '신분증 촬영',
+                    '제출',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
