@@ -15,6 +15,31 @@ class _PasswordState extends State<Password> {
   bool isFirst = true;
   bool wrongpwd = false;
 
+  void onNumberPressed(int num) {
+    setState(() {
+      password += num.toString();
+      count++;
+
+      if (count == 6 && password2.isEmpty) {
+        count = 0;
+        password2 = password;
+        password = '';
+        isFirst = false;
+      }
+      if (count == 6 && password2 == password) {
+        count = 0;
+        password = '';
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => const Home()));
+      }
+      if (count == 6 && password2.isNotEmpty && password2 != password) {
+        wrongpwd = true;
+        password = '';
+        count = 0;
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -108,256 +133,31 @@ class _PasswordState extends State<Password> {
                 Row(
                   children: [
                     NumberPad(
-                        num: 1,
-                        onNumberPressed: () {
-                          setState(() {
-                            password += '1';
-                            count++;
-                            if (count == 6 && password2.isEmpty) {
-                              count = 0;
-                              password2 = password;
-                              password = '';
-                              isFirst = false;
-                            }
-                            if (count == 6 && password2 == password) {
-                              count = 0;
-                              password = '';
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const Home()));
-                            }
-                            if (count == 6 &&
-                                password2.isNotEmpty &&
-                                password2 != password) {
-                              wrongpwd = true;
-                              password = '';
-                              count = 0;
-                            }
-                          });
-                        }),
+                        num: 1, onNumberPressed: () => onNumberPressed(1)),
                     NumberPad(
-                        num: 2,
-                        onNumberPressed: () {
-                          setState(() {
-                            password += '2';
-                            count++;
-                            if (count == 6 && password2.isEmpty) {
-                              count = 0;
-                              password2 = password;
-                              password = '';
-                              isFirst = false;
-                            }
-                            if (count == 6 && password2 == password) {
-                              count = 0;
-                              password = '';
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const Home()));
-                            }
-                            if (count == 6 &&
-                                password2.isNotEmpty &&
-                                password2 != password) {
-                              wrongpwd = true;
-                              password = '';
-                              count = 0;
-                            }
-                          });
-                        }),
+                        num: 2, onNumberPressed: () => onNumberPressed(2)),
                     NumberPad(
-                        num: 3,
-                        onNumberPressed: () {
-                          setState(() {
-                            password += '3';
-                            count++;
-                            if (count == 6 && password2.isEmpty) {
-                              count = 0;
-                              password2 = password;
-                              password = '';
-                              isFirst = false;
-                            }
-                            if (count == 6 && password2 == password) {
-                              count = 0;
-                              password = '';
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const Home()));
-                            }
-                            if (count == 6 &&
-                                password2.isNotEmpty &&
-                                password2 != password) {
-                              wrongpwd = true;
-                              password = '';
-                              count = 0;
-                            }
-                          });
-                        }),
+                        num: 3, onNumberPressed: () => onNumberPressed(3)),
                   ],
                 ),
                 Row(
                   children: [
                     NumberPad(
-                        num: 4,
-                        onNumberPressed: () {
-                          setState(() {
-                            password += '4';
-                            count++;
-                            if (count == 6 && password2.isEmpty) {
-                              count = 0;
-                              password2 = password;
-                              password = '';
-                              isFirst = false;
-                            }
-                            if (count == 6 && password2 == password) {
-                              count = 0;
-                              password = '';
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const Home()));
-                            }
-                            if (count == 6 &&
-                                password2.isNotEmpty &&
-                                password2 != password) {
-                              wrongpwd = true;
-                              password = '';
-                              count = 0;
-                            }
-                          });
-                        }),
+                        num: 4, onNumberPressed: () => onNumberPressed(4)),
                     NumberPad(
-                        num: 5,
-                        onNumberPressed: () {
-                          setState(() {
-                            password += '5';
-                            count++;
-                            if (count == 6 && password2.isEmpty) {
-                              count = 0;
-                              password2 = password;
-                              password = '';
-                              isFirst = false;
-                            }
-                            if (count == 6 && password2 == password) {
-                              count = 0;
-                              password = '';
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const Home()));
-                            }
-                            if (count == 6 &&
-                                password2.isNotEmpty &&
-                                password2 != password) {
-                              wrongpwd = true;
-                              password = '';
-                              count = 0;
-                            }
-                          });
-                        }),
+                        num: 5, onNumberPressed: () => onNumberPressed(5)),
                     NumberPad(
-                        num: 6,
-                        onNumberPressed: () {
-                          setState(() {
-                            password += '6';
-                            count++;
-                            if (count == 6 && password2.isEmpty) {
-                              count = 0;
-                              password2 = password;
-                              password = '';
-                              isFirst = false;
-                            }
-                            if (count == 6 && password2 == password) {
-                              count = 0;
-                              password = '';
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const Home()));
-                            }
-                            if (count == 6 &&
-                                password2.isNotEmpty &&
-                                password2 != password) {
-                              wrongpwd = true;
-                              password = '';
-                              count = 0;
-                            }
-                          });
-                        }),
+                        num: 6, onNumberPressed: () => onNumberPressed(6)),
                   ],
                 ),
                 Row(
                   children: [
                     NumberPad(
-                        num: 7,
-                        onNumberPressed: () {
-                          setState(() {
-                            password += '7';
-                            count++;
-                            if (count == 6 && password2.isEmpty) {
-                              count = 0;
-                              password2 = password;
-                              password = '';
-                              isFirst = false;
-                            }
-                            if (count == 6 && password2 == password) {
-                              count = 0;
-                              password = '';
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const Home()));
-                            }
-                            if (count == 6 &&
-                                password2.isNotEmpty &&
-                                password2 != password) {
-                              wrongpwd = true;
-                              password = '';
-                              count = 0;
-                            }
-                          });
-                        }),
+                        num: 7, onNumberPressed: () => onNumberPressed(7)),
                     NumberPad(
-                        num: 8,
-                        onNumberPressed: () {
-                          setState(() {
-                            password += '8';
-                            count++;
-                            if (count == 6 && password2.isEmpty) {
-                              count = 0;
-                              password2 = password;
-                              password = '';
-                              isFirst = false;
-                            }
-                            if (count == 6 && password2 == password) {
-                              count = 0;
-                              password = '';
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const Home()));
-                            }
-                            if (count == 6 &&
-                                password2.isNotEmpty &&
-                                password2 != password) {
-                              wrongpwd = true;
-                              password = '';
-                              count = 0;
-                            }
-                          });
-                        }),
+                        num: 8, onNumberPressed: () => onNumberPressed(8)),
                     NumberPad(
-                        num: 9,
-                        onNumberPressed: () {
-                          setState(() {
-                            password += '9';
-                            count++;
-                            if (count == 6 && password2.isEmpty) {
-                              count = 0;
-                              password2 = password;
-                              password = '';
-                              isFirst = false;
-                            }
-                            if (count == 6 && password2 == password) {
-                              count = 0;
-                              password = '';
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const Home()));
-                            }
-                            if (count == 6 &&
-                                password2.isNotEmpty &&
-                                password2 != password) {
-                              wrongpwd = true;
-                              password = '';
-                              count = 0;
-                            }
-                          });
-                        }),
+                        num: 9, onNumberPressed: () => onNumberPressed(9)),
                   ],
                 ),
                 Row(
@@ -376,32 +176,7 @@ class _PasswordState extends State<Password> {
                       ),
                     ),
                     NumberPad(
-                        num: 0,
-                        onNumberPressed: () {
-                          setState(() {
-                            password += '0';
-                            count++;
-                            if (count == 6 && password2.isEmpty) {
-                              count = 0;
-                              password2 = password;
-                              password = '';
-                              isFirst = false;
-                            }
-                            if (count == 6 && password2 == password) {
-                              count = 0;
-                              password = '';
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => const Home()));
-                            }
-                            if (count == 6 &&
-                                password2.isNotEmpty &&
-                                password2 != password) {
-                              wrongpwd = true;
-                              password = '';
-                              count = 0;
-                            }
-                          });
-                        }),
+                        num: 0, onNumberPressed: () => onNumberPressed(0)),
                     GestureDetector(
                       onTap: () {
                         setState(() {

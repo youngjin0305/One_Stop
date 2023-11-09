@@ -89,7 +89,7 @@ class _CameraPreviewState extends State<CameraPreview_> {
                   ),
                 );
               } catch (e) {
-                print(e);
+                //print(e);
               }
             },
             child: const Icon(Icons.camera_alt),
