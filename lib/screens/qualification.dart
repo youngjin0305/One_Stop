@@ -43,6 +43,7 @@ class Qualification extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
+<<<<<<< HEAD
             GestureDetector(
               onTap: () {
                 Navigator.of(context).push(
@@ -76,6 +77,26 @@ class Qualification extends StatelessWidget {
                       size: 18,
                     )
                   ],
+=======
+            Container(
+              width: 320,
+              height: 50,
+              padding: const EdgeInsets.only(
+                top: 15,
+                left: 20,
+                right: 20,
+                bottom: 13,
+              ),
+              color: const Color(0xFFEFEFEF),
+              child: const Text(
+                '신분증 촬영',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w700,
+                  height: 0,
+>>>>>>> cec1a11b8c3f5201aec18a0a76798d8e033ca01e
                 ),
               ),
             ),

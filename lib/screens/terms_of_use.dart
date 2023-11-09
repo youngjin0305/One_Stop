@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
 import 'package:onestop/screens/qualification.dart';
 
@@ -191,3 +192,20 @@ class _TermsOfUseState extends State<TermsOfUse> {
     );
   }
 }
+=======
+import 'package:flutter/material.dart';
+
+class TermsOfUse extends StatefulWidget {
+  const TermsOfUse({super.key});
+
+  @override
+  State<TermsOfUse> createState() => _TermsOfUseState();
+}
+
+class _TermsOfUseState extends State<TermsOfUse> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
+  }
+}
+>>>>>>> cec1a11b8c3f5201aec18a0a76798d8e033ca01e
