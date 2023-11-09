@@ -33,7 +33,7 @@ class FirstPage extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    'One-Stop',
+                    'COG',
                     style: TextStyle(
                       color: Color.fromRGBO(255, 61, 108, 1),
                       fontSize: 70,

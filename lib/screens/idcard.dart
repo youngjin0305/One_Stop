@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:onestop/screens/camera_preview.dart';
 import 'package:onestop/screens/idcard_check.dart';
+import 'package:camera/camera.dart';
 
 class IdCard extends StatefulWidget {
   const IdCard({super.key});
@@ -81,14 +83,16 @@ class _IdCardCheckState extends State<IdCard> {
             height: 16,
           ),
           GestureDetector(
-            onTap:
-                //임시로 이동만
-                (isChecked == true)
-                    ? () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const IdcardCheck()));
-                      }
-                    : null,
+            onTap: (isChecked == true)
+                ? () async {
+                    final cameras = await availableCameras();
+                    final firstCamera = cameras.first;
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => CameraPreview_(
+                              camera: firstCamera,
+                            )));
+                  }
+                : null,
             child: Container(
               width: 260,
               padding: const EdgeInsets.symmetric(vertical: 18),

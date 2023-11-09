@@ -69,7 +69,7 @@ class _PasswordState extends State<Password> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 130,
+              horizontal: 125,
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -98,195 +98,331 @@ class _PasswordState extends State<Password> {
           const SizedBox(
             height: 25,
           ),
-          NumberPad(
-            num: 1,
-            onNumberPressed: () {
-              setState(() {
-                count++;
-                if (count == 6 && password2.isEmpty) {
-                  count = 0;
-                  password2 = password;
-                  password = '';
-                  isFirst = false;
-                }
-                if (count == 6 && password2 == password) {
-                  count = 0;
-                  password = '';
-                  //서버로 비밀번호 보내기
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => const Home()));
-                }
-                if (count == 6 &&
-                    password2.isNotEmpty &&
-                    password2 != password) {
-                  wrongpwd = true;
-                  password = '';
-                  count = 0;
-                }
-              });
-            },
-            first: () {
-              setState(() {
-                password += '1';
-              });
-            },
-            second: () {
-              setState(() {
-                password += '2';
-              });
-            },
-            third: () {
-              setState(() {
-                password += '3';
-              });
-            },
-          ),
-          NumberPad(
-            num: 4,
-            onNumberPressed: () {
-              setState(() {
-                count++;
-                if (count == 6 && password2.isEmpty) {
-                  count = 0;
-                  password2 = password;
-                  password = '';
-                  isFirst = false;
-                }
-                if (count == 6 && password2 == password) {
-                  count = 0;
-                  password = '';
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => const Home()));
-                }
-                if (count == 6 &&
-                    password2.isNotEmpty &&
-                    password2 != password) {
-                  wrongpwd = true;
-                  password = '';
-                  count = 0;
-                }
-              });
-            },
-            first: () {
-              setState(() {
-                password += '4';
-              });
-            },
-            second: () {
-              setState(() {
-                password += '5';
-              });
-            },
-            third: () {
-              setState(() {
-                password += '6';
-              });
-            },
-          ),
-          NumberPad(
-            num: 7,
-            onNumberPressed: () {
-              setState(() {
-                count++;
-                if (count == 6 && password2.isEmpty) {
-                  count = 0;
-                  password2 = password;
-                  password = '';
-                  isFirst = false;
-                }
-                if (count == 6 && password2 == password) {
-                  count = 0;
-                  password = '';
-                  Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => const Home()));
-                }
-                if (count == 6 &&
-                    password2.isNotEmpty &&
-                    password2 != password) {
-                  wrongpwd = true;
-                  password = '';
-                  count = 0;
-                }
-              });
-            },
-            first: () {
-              setState(() {
-                password += '7';
-              });
-            },
-            second: () {
-              setState(() {
-                password += '8';
-              });
-            },
-            third: () {
-              setState(() {
-                password += '9';
-              });
-            },
-          ),
-          Row(
-            children: [
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    count = 0;
-                    password = '';
-                  });
-                },
-                child: Container(
-                  padding: const EdgeInsets.fromLTRB(58, 23, 55, 23),
-                  child: const Icon(Icons.replay),
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 10,
+            ),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    NumberPad(
+                        num: 1,
+                        onNumberPressed: () {
+                          setState(() {
+                            password += '1';
+                            count++;
+                            if (count == 6 && password2.isEmpty) {
+                              count = 0;
+                              password2 = password;
+                              password = '';
+                              isFirst = false;
+                            }
+                            if (count == 6 && password2 == password) {
+                              count = 0;
+                              password = '';
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const Home()));
+                            }
+                            if (count == 6 &&
+                                password2.isNotEmpty &&
+                                password2 != password) {
+                              wrongpwd = true;
+                              password = '';
+                              count = 0;
+                            }
+                          });
+                        }),
+                    NumberPad(
+                        num: 2,
+                        onNumberPressed: () {
+                          setState(() {
+                            password += '2';
+                            count++;
+                            if (count == 6 && password2.isEmpty) {
+                              count = 0;
+                              password2 = password;
+                              password = '';
+                              isFirst = false;
+                            }
+                            if (count == 6 && password2 == password) {
+                              count = 0;
+                              password = '';
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const Home()));
+                            }
+                            if (count == 6 &&
+                                password2.isNotEmpty &&
+                                password2 != password) {
+                              wrongpwd = true;
+                              password = '';
+                              count = 0;
+                            }
+                          });
+                        }),
+                    NumberPad(
+                        num: 3,
+                        onNumberPressed: () {
+                          setState(() {
+                            password += '3';
+                            count++;
+                            if (count == 6 && password2.isEmpty) {
+                              count = 0;
+                              password2 = password;
+                              password = '';
+                              isFirst = false;
+                            }
+                            if (count == 6 && password2 == password) {
+                              count = 0;
+                              password = '';
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const Home()));
+                            }
+                            if (count == 6 &&
+                                password2.isNotEmpty &&
+                                password2 != password) {
+                              wrongpwd = true;
+                              password = '';
+                              count = 0;
+                            }
+                          });
+                        }),
+                  ],
                 ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    count++;
-                    password += '0';
-                    if (count == 6 && password2.isEmpty) {
-                      count = 0;
-                      password2 = password;
-                      password = '';
-                    }
-                    if (count == 6 && password2 == password) {
-                      count = 0;
-                      password = '';
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => const Home()));
-                    }
-                  });
-                },
-                child: Container(
-                  padding: const EdgeInsets.fromLTRB(61, 23, 61, 23),
-                  child: const Text(
-                    '0',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 24,
-                      fontFamily: 'Inter',
-                      fontWeight: FontWeight.w700,
-                      height: 0,
+                Row(
+                  children: [
+                    NumberPad(
+                        num: 4,
+                        onNumberPressed: () {
+                          setState(() {
+                            password += '4';
+                            count++;
+                            if (count == 6 && password2.isEmpty) {
+                              count = 0;
+                              password2 = password;
+                              password = '';
+                              isFirst = false;
+                            }
+                            if (count == 6 && password2 == password) {
+                              count = 0;
+                              password = '';
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const Home()));
+                            }
+                            if (count == 6 &&
+                                password2.isNotEmpty &&
+                                password2 != password) {
+                              wrongpwd = true;
+                              password = '';
+                              count = 0;
+                            }
+                          });
+                        }),
+                    NumberPad(
+                        num: 5,
+                        onNumberPressed: () {
+                          setState(() {
+                            password += '5';
+                            count++;
+                            if (count == 6 && password2.isEmpty) {
+                              count = 0;
+                              password2 = password;
+                              password = '';
+                              isFirst = false;
+                            }
+                            if (count == 6 && password2 == password) {
+                              count = 0;
+                              password = '';
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const Home()));
+                            }
+                            if (count == 6 &&
+                                password2.isNotEmpty &&
+                                password2 != password) {
+                              wrongpwd = true;
+                              password = '';
+                              count = 0;
+                            }
+                          });
+                        }),
+                    NumberPad(
+                        num: 6,
+                        onNumberPressed: () {
+                          setState(() {
+                            password += '6';
+                            count++;
+                            if (count == 6 && password2.isEmpty) {
+                              count = 0;
+                              password2 = password;
+                              password = '';
+                              isFirst = false;
+                            }
+                            if (count == 6 && password2 == password) {
+                              count = 0;
+                              password = '';
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const Home()));
+                            }
+                            if (count == 6 &&
+                                password2.isNotEmpty &&
+                                password2 != password) {
+                              wrongpwd = true;
+                              password = '';
+                              count = 0;
+                            }
+                          });
+                        }),
+                  ],
+                ),
+                Row(
+                  children: [
+                    NumberPad(
+                        num: 7,
+                        onNumberPressed: () {
+                          setState(() {
+                            password += '7';
+                            count++;
+                            if (count == 6 && password2.isEmpty) {
+                              count = 0;
+                              password2 = password;
+                              password = '';
+                              isFirst = false;
+                            }
+                            if (count == 6 && password2 == password) {
+                              count = 0;
+                              password = '';
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const Home()));
+                            }
+                            if (count == 6 &&
+                                password2.isNotEmpty &&
+                                password2 != password) {
+                              wrongpwd = true;
+                              password = '';
+                              count = 0;
+                            }
+                          });
+                        }),
+                    NumberPad(
+                        num: 8,
+                        onNumberPressed: () {
+                          setState(() {
+                            password += '8';
+                            count++;
+                            if (count == 6 && password2.isEmpty) {
+                              count = 0;
+                              password2 = password;
+                              password = '';
+                              isFirst = false;
+                            }
+                            if (count == 6 && password2 == password) {
+                              count = 0;
+                              password = '';
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const Home()));
+                            }
+                            if (count == 6 &&
+                                password2.isNotEmpty &&
+                                password2 != password) {
+                              wrongpwd = true;
+                              password = '';
+                              count = 0;
+                            }
+                          });
+                        }),
+                    NumberPad(
+                        num: 9,
+                        onNumberPressed: () {
+                          setState(() {
+                            password += '9';
+                            count++;
+                            if (count == 6 && password2.isEmpty) {
+                              count = 0;
+                              password2 = password;
+                              password = '';
+                              isFirst = false;
+                            }
+                            if (count == 6 && password2 == password) {
+                              count = 0;
+                              password = '';
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const Home()));
+                            }
+                            if (count == 6 &&
+                                password2.isNotEmpty &&
+                                password2 != password) {
+                              wrongpwd = true;
+                              password = '';
+                              count = 0;
+                            }
+                          });
+                        }),
+                  ],
+                ),
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          count = 0;
+                          password = '';
+                        });
+                      },
+                      child: const SizedBox(
+                        width: 120,
+                        height: 60,
+                        child: Icon(Icons.replay),
+                      ),
                     ),
-                  ),
+                    NumberPad(
+                        num: 0,
+                        onNumberPressed: () {
+                          setState(() {
+                            password += '0';
+                            count++;
+                            if (count == 6 && password2.isEmpty) {
+                              count = 0;
+                              password2 = password;
+                              password = '';
+                              isFirst = false;
+                            }
+                            if (count == 6 && password2 == password) {
+                              count = 0;
+                              password = '';
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => const Home()));
+                            }
+                            if (count == 6 &&
+                                password2.isNotEmpty &&
+                                password2 != password) {
+                              wrongpwd = true;
+                              password = '';
+                              count = 0;
+                            }
+                          });
+                        }),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          if (password.isNotEmpty) {
+                            count--;
+                            password =
+                                password.substring(0, password.length - 1);
+                          }
+                        });
+                      },
+                      child: const SizedBox(
+                        width: 120,
+                        height: 60,
+                        child: Icon(Icons.backspace),
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  setState(() {
-                    if (password.isNotEmpty) {
-                      count--;
-                      password = password.substring(0, password.length - 1);
-                    }
-                  });
-                },
-                child: Container(
-                  padding: const EdgeInsets.fromLTRB(55, 23, 58, 23),
-                  child: const Icon(Icons.backspace),
-                ),
-              ),
-            ],
-          )
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -298,79 +434,34 @@ class NumberPad extends StatelessWidget {
     super.key,
     required this.num,
     required this.onNumberPressed,
-    required this.first,
-    required this.second,
-    required this.third,
   });
 
   final int num;
   final VoidCallback onNumberPressed;
-  final VoidCallback first;
-  final VoidCallback second;
-  final VoidCallback third;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        GestureDetector(
-          onTap: () {
-            first();
-            onNumberPressed();
-          },
-          child: Container(
-            padding: const EdgeInsets.fromLTRB(62, 23, 61, 23),
-            child: Text(
-              num.toString(),
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 24,
-                fontFamily: 'Inter',
-                fontWeight: FontWeight.w700,
-                height: 0,
-              ),
+    return GestureDetector(
+      onTap: () {
+        onNumberPressed();
+      },
+      child: SizedBox(
+        width: 120,
+        height: 60,
+        child: Align(
+          child: Text(
+            num.toString(),
+            style: const TextStyle(
+              color: Colors.black,
+              fontSize: 24,
+              fontFamily: 'Inter',
+              fontWeight: FontWeight.w700,
+              height: 0,
             ),
+            textAlign: TextAlign.center,
           ),
         ),
-        GestureDetector(
-          onTap: () {
-            second();
-            onNumberPressed();
-          },
-          child: Container(
-            padding: const EdgeInsets.fromLTRB(61, 23, 61, 23),
-            child: Text(
-              (num + 1).toString(),
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 24,
-                fontFamily: 'Inter',
-                fontWeight: FontWeight.w700,
-                height: 0,
-              ),
-            ),
-          ),
-        ),
-        GestureDetector(
-          onTap: () {
-            third();
-            onNumberPressed();
-          },
-          child: Container(
-            padding: const EdgeInsets.fromLTRB(61, 23, 62, 23),
-            child: Text(
-              (num + 2).toString(),
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 24,
-                fontFamily: 'Inter',
-                fontWeight: FontWeight.w700,
-                height: 0,
-              ),
-            ),
-          ),
-        ),
-      ],
+      ),
     );
   }
 }

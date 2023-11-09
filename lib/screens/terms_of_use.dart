@@ -89,7 +89,7 @@ class _TermsOfUseState extends State<TermsOfUse> {
             ),
             CheckboxListTile(
               title: const Text(
-                '[필수] One Stop 서비스 이용약관 동의',
+                '[필수] COG 서비스 이용약관 동의',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 14,
@@ -110,7 +110,7 @@ class _TermsOfUseState extends State<TermsOfUse> {
             ),
             CheckboxListTile(
               title: const Text(
-                '[필수] One Stop 개인정보 수집 및 이용 동의',
+                '[필수] COG 개인정보 수집 및 이용 동의',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 14,
@@ -131,7 +131,7 @@ class _TermsOfUseState extends State<TermsOfUse> {
             ),
             CheckboxListTile(
               title: const Text(
-                '[필수] One Stop 개인정보 제공 동의',
+                '[필수] COG 개인정보 제공 동의',
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 14,

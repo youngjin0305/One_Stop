@@ -9,9 +9,12 @@ class IdcardCheck extends StatefulWidget {
 }
 
 class _IdcardCheckState extends State<IdcardCheck> {
-  var name = 'tmp';
-  var num = '1';
-  var date = '2';
+  var name = '';
+  var num = '';
+  var date = '';
+  TextEditingController nameController = TextEditingController();
+  TextEditingController numController = TextEditingController();
+  TextEditingController dateController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -73,8 +76,13 @@ class _IdcardCheckState extends State<IdcardCheck> {
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(
-                name,
+              child: TextField(
+                controller: nameController,
+                onChanged: (value) {
+                  setState(() {
+                    name = value;
+                  });
+                },
                 style: const TextStyle(
                   color: Colors.black,
                   fontSize: 16,
@@ -122,8 +130,13 @@ class _IdcardCheckState extends State<IdcardCheck> {
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(
-                num,
+              child: TextField(
+                controller: numController,
+                onChanged: (value) {
+                  setState(() {
+                    num = value;
+                  });
+                },
                 style: const TextStyle(
                   color: Colors.black,
                   fontSize: 16,
@@ -171,8 +184,13 @@ class _IdcardCheckState extends State<IdcardCheck> {
             ),
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text(
-                date,
+              child: TextField(
+                controller: dateController,
+                onChanged: (value) {
+                  setState(() {
+                    date = value;
+                  });
+                },
                 style: const TextStyle(
                   color: Colors.black,
                   fontSize: 16,
